@@ -1,20 +1,18 @@
 environment: "development"
 
-scheduler:
-  frequency: "120"
-  start-delay: ""
-
 http:
   listener:
     host: "localhost"
-    port: "8081"
+    port: "9081"
   request:
-    host: "172.17.11.128"
-    port: "9095"
+    host: ""
+    port: ""
         
 database:
-  host: "172.17.11.194"
-  port: "5432"
-  user: "appuser"
-  password: "apppassword"
-  name: "apimule_db"
+  host: ""
+  port: ""
+  user: ""
+  password: ""
+  name: "" 
+  
+  

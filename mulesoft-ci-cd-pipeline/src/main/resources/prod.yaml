@@ -1,0 +1,16 @@
+environment: "production"
+
+http:
+  listener:
+    host: "localhost"
+    port: "9081"
+  request:
+    host: ""
+    port: ""
+        
+database:
+  host: ""
+  port: ""
+  user: ""
+  password: ""
+  name: ""
