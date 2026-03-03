@@ -1,4 +1,4 @@
-# Medium Articles — AmsaTech
+# Medium — AmsaTech
 
 **Technical write-ups, POCs, and labs** on integration, API security, DevOps and automation.  
 Each folder in this repository corresponds to a **Medium article** or **technical demonstration** published on [Medium](https://medium.com/@amsatambengue).
