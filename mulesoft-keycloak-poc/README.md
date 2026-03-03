@@ -4,7 +4,7 @@ _By Amsata Mbengue (AmsaTech)_
 
 ---
 
-## 🧭 Overview
+## Overview
 
 This Proof of Concept demonstrates how APIs can be secured using Keycloak as an external Identity Provider (OAuth2 / JWT) and MuleSoft as Gateway. 
 It’s designed to help teams standardize authentication across multiple APIs with minimal configuration.
@@ -13,7 +13,7 @@ The project is organized for clarity and portability — with scripts, Postman r
 
 ---
 
-## ⚙️ Architecture Summary
+## Architecture Summary
 
 ![Architecture](./docs/architecture_cible.png)
 
@@ -25,7 +25,7 @@ The project is organized for clarity and portability — with scripts, Postman r
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 You can run the full Postman collection directly in your workspace:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/39062258-19507541-b7ba-4bc8-a753-72e1cbcf00d6?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D39062258-19507541-b7ba-4bc8-a753-72e1cbcf00d6%26entityType%3Dcollection%26workspaceId%3D5e2235ad-6812-490d-a69d-87b37750e8a2#?env%5Bkeycloak-mule-poc%5D=W3sia2V5IjoiZ3JhbnRfdHlwZSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQifSx7ImtleSI6InVzZXJuYW1lIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5IjoicGFzc3dvcmQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0In0seyJrZXkiOiJjbGllbnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0In0seyJrZXkiOiJjbGllbnRfc2VjcmV0IiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5IjoiYWNjZXNzX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5IjoicHJveHlfdXJpIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5Ijoia2NfYmFzZSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQifSx7ImtleSI6InJlYWxtIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5IjoiIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9XQ==)
@@ -60,10 +60,10 @@ requests/get_token.sh
 ```
 It returns a JSON object containing your access token.
 
-💡 You can also use Postman instead of scripts.
+ You can also use Postman instead of scripts.
 Import both postman_collection.json and postman_environment.json.
 
-### 4 🌐 Call the Secured API
+### 4 Call the Secured API
 Once you have your access token, update .env with:
 ```bash
 ACCESS_TOKEN=<PASTE_ACCESS_TOKEN>
@@ -81,9 +81,9 @@ Expected output:
 { "message": "Access granted. Token valid." }
 ```
 
-## 👤 About the author
+##  About the author
 Amsata Mbengue – MuleSoft & DevOps Integration Engineer  
-🔗 LinkedIn: [linkedin.com/in/amsatambengue](https://linkedin.com/in/amsatambengue)  
-🧠 Medium: [medium.com/@amsatambengue](https://medium.com/@amsatambengue)  
-💼 Upwork: [upwork.com/freelancers/~01a6f5a1f5a994e5c2?mp_source=share](https://www.upwork.com/freelancers/~01a6f5a1f5a994e5c2?mp_source=share)  
+ LinkedIn: [linkedin.com/in/amsatambengue](https://linkedin.com/in/amsatambengue)  
+ Medium: [medium.com/@amsatambengue](https://medium.com/@amsatambengue)  
+ Upwork: [upwork.com/freelancers/~01a6f5a1f5a994e5c2?mp_source=share](https://www.upwork.com/freelancers/~01a6f5a1f5a994e5c2?mp_source=share)  
 
