@@ -1,4 +1,4 @@
-# 🔐 MuleSoft + Keycloak Integration POC  
+# MuleSoft + Keycloak Integration POC  
 **Secure API access with OAuth2 / JWT**  
 _By Amsata Mbengue (AmsaTech)_
 
@@ -11,6 +11,8 @@ It’s designed to help teams standardize authentication across multiple APIs wi
 
 The project is organized for clarity and portability — with scripts, Postman requests, and architecture documentation.
 
+**Full technical explanation available here:**
+https://medium.com/@amsatambengue/jwt-et-oauth2-sécuriser-vos-backends-avec-mulesoft-et-keycloak-d83387ee61a0
 ---
 
 ## Architecture Summary
