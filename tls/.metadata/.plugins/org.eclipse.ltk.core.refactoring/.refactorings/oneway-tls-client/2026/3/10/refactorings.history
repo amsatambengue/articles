@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;oneway-tls-client/src/main/resources/oneway-server-keystore.p12&apos; to &apos;oneway-client-keystore.p12&apos;" description="Rename resource &apos;oneway-server-keystore.p12&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/oneway-server-keystore.p12" name="oneway-client-keystore.p12" stamp="1772345049292" updateReferences="true"/>
+</session>

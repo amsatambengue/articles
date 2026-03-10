@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b73fe33b-0f4f-47bb-bee2-88f0cff3ca19" >
+		<http:listener-connection host="0.0.0.0" port="8081" protocol="HTTPS">
+			<tls:context >
+				<tls:key-store type="pkcs12" path="oneway-server-keystore.p12" alias="https-server" keyPassword="ChangeMe_123!" password="ChangeMe_123!" />
+			</tls:context>
+		</http:listener-connection>
+	</http:listener-config>
+	<flow name="oneway-tls-serverFlow" doc:id="c2e0f2d0-f84a-4229-809b-a5d415eb63e7" >
+		<http:listener doc:name="Listener" doc:id="83ed96a1-cd04-4aa6-b4ff-460234c811a9" config-ref="HTTP_Listener_config" path="/health"/>
+		<ee:transform doc:name="Transform Message" doc:id="f43ba15b-3549-4e3d-a8a3-ff6837fe8186" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  "app": "oneway-tls-server",
+  "status": "ok"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

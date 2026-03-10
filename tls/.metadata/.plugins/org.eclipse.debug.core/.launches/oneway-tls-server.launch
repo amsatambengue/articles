@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.mule.tooling.runtime.muleServerLaunchType">
+    <stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.4.11.ee"/>
+    <stringAttribute key="mule-agent-port" value="50622"/>
+    <stringAttribute key="mule-agent-token-auth" value="ffee8b61-b6fb-4d05-b474-7d3d12bbcec2"/>
+    <listAttribute key="mule-project-names">
+        <listEntry value="oneway-tls-server"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="oneway-tls-server"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-M-XX:-UseBiasedLocking -M-Dfile.encoding=UTF-8 -M-XX:+UseG1GC -M-XX:+UseStringDeduplication -M-Dmule.deployment.forceParseConfigXmls=true"/>
+</launchConfiguration>
