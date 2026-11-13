@@ -1,0 +1,50 @@
+{
+  "name": "Incident Investigation Agent",
+  "description": "Investigates technical incidents and returns an investigation result.",
+  "version": "1.0.0",
+  "protocolVersion": "1.0",
+
+  "supportedInterfaces": [
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "http://localhost:3002/incident-agent/jsonrpc",
+      "protocolVersion": "1.0",
+      "tenant": ""
+    }
+  ],
+
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+
+  "skills": [
+  {
+    "id": "incident-investigation",
+    "name": "Incident Investigation",
+    "description": "Investigates an incident from a textual incident description.",
+    "tags": [
+      "incident",
+      "investigation"
+    ],
+    "examples": [
+      "Investigate incident INC-1042 - Core banking unavailable"
+    ],
+    "inputModes": [
+      "text/plain"
+    ],
+    "outputModes": [
+      "text/plain"
+    ]
+  }
+],
+
+  "defaultInputModes": [
+    "text/plain"
+  ],
+
+  "defaultOutputModes": [
+    "text/plain"
+  ]
+}

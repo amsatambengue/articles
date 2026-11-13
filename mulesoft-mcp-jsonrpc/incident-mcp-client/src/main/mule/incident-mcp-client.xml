@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:mcp="http://www.mulesoft.org/schema/mule/mcp"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/mcp http://www.mulesoft.org/schema/mule/mcp/current/mule-mcp.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="80ae1a70-768a-4ff8-bd1a-d2331d3fdef8" >
+		<http:listener-connection host="0.0.0.0" port="3001" />
+	</http:listener-config>
+	<mcp:client-config name="Incident_MCP_Client_Config" doc:name="MCP Client" doc:id="9a443ec1-5aec-4dbe-b944-e9e0aff93eb9" clientName="Incident_MCP_Client" clientVersion="1.0.0" >
+		<mcp:streamable-http-client-connection serverUrl="http://localhost:3000" />
+	</mcp:client-config>
+	<flow name="listToolsFlow" doc:id="9425ef8a-2c87-4dd4-8a70-a319dc5ed3da" >
+		<http:listener doc:name="Listener" doc:id="e908b562-7aec-4293-a72a-aa6a9fa854b1" config-ref="HTTP_Listener_config" path="/tools"/>
+		<mcp:list-tools doc:name="MCP Client - List Tools" doc:id="38b92d70-3983-4cf8-b715-a2bf8fd57948" config-ref="Incident_MCP_Client_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="415724ee-4908-48bb-a154-9c318e99583c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="escalateIncidentFlow" doc:id="3aa6576d-85c9-456d-aa93-5e88511073f7" >
+		<http:listener doc:name="Listener" doc:id="cfbeff24-87b5-4e53-8c5b-33fe11b6a8e4" config-ref="HTTP_Listener_config" path="/escalate"/>
+		<ee:transform doc:name="to java" doc:id="ec350966-b84b-4db2-82c6-8c4791169c1d" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+  incidentId: payload.incidentId
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<mcp:call-tool toolName="escalateIncident" doc:name="MCP Client - Call Tool" doc:id="beb95800-d46d-4768-85b8-378559e34720" config-ref="Incident_MCP_Client_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="0d617693-f39e-4add-8271-576c70d5e4cc" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
