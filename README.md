@@ -1,32 +1,33 @@
-# Medium — AmsaTech
+# Technical Articles & Projects
 
-**Technical write-ups, POCs, and labs** on integration, API security, DevOps and automation.  
-Each folder in this repository corresponds to a **Medium article** or **technical demonstration** published on [Medium](https://medium.com/@amsatambengue).
+A collection of practical implementations, proof-of-concepts (POCs), and technical resources covering enterprise integration, API architecture, security, and DevOps.
 
----
+This repository contains supporting code and resources for my technical articles published on [Medium](https://medium.com/@amsatambengue).
 
-## Overview
+## Projects
 
-This repository centralizes all supporting materials for my **Medium publications**, including:
-- Source code samples  
-- Postman collections  
-- API specifications (RAML / OpenAPI)  
-- Architecture diagrams  
-- Bash / PowerShell scripts for automation  
-- Companion READMEs with setup instructions  
+| Project | Description |
+|---|---|
+| [MuleSoft CI/CD Pipeline](./mulesoft-ci-cd-pipeline) | Automation of MuleSoft application builds, quality checks, and deployments. |
+| [MuleSoft & Keycloak](./mulesoft-keycloak-poc) | API authentication and authorization using Keycloak and OAuth 2.0. |
+| [MuleSoft MCP & JSON-RPC](./mulesoft-mcp-jsonrpc) | Exploring Model Context Protocol (MCP) integration with MuleSoft. |
+| [MuleSoft TLS](./mulesoft-tls-poc) | Securing MuleSoft communications using Transport Layer Security (TLS). |
 
-All content is designed to be **self-contained** and **practical**, focusing on reproducible real-world use cases.
+## Repository Contents
 
+Depending on the project, resources may include:
 
----
+- MuleSoft application source code
+- RAML specifications and Postman collections
+- Architecture diagrams
+- Configuration and automation scripts
+- Setup instructions and technical documentation
+
+Each project is organized independently, with its own implementation details and configuration requirements.
+
 ## Connect
 
-Author: Amsata Mbengue
+**Amsata Mbengue**  
+Integration Architect & Software Engineer
 
-Integration & DevOps Consultant — MuleSoft | API | Security | CI/CD | Kubernetes
-
-amsata.mbengue@gmail.com
-
-
-
-
+[LinkedIn](https://linkedin.com/in/amsatambengue) · [Medium](https://medium.com/@amsatambengue) · [GitHub](https://github.com/amsatambengue)
